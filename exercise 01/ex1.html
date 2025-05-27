@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #e6e6e6;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+      }
+      .student-list {
+        width: 800px;
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 10px;
+      }
+
+      .student-list h1 {
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      .student-list .input {
+        width: 200px;
+        height: 40px;
+        font-size: 16px;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 2px solid #ececec;
+        border-radius: 5px;
+      }
+
+      .student-list .search-input {
+        margin-top: 15px;
+      }
+
+      .student-list .add-button {
+        color: #fff;
+        background-color: #007bff;
+        font-size: 17px;
+        height: 40px;
+        width: 150px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        padding: 10px 80px 8px 8px;
+        font-size: 18px;
+        text-align: left;
+      }
+
+      tr {
+        border-bottom: 2px solid #e6e6e6;
+      }
+
+      .edit-button {
+        color: #fff;
+        background-color: #ffc107;
+        padding: 5px 10px;
+        margin-right: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .delete-button {
+        color: #fff;
+        background-color: #dc3545;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="student-list">
+      <h1>Quản lý danh sách sinh viên</h1>
+      <input type="text" class="input" placeholder="Tên sinh viên" id="name" />
+      <input type="number" class="input" placeholder="Tuổi" id="age" /><br />
+      <input type="text" class="input" placeholder="Lớp" id="class" />
+      <button class="add-button">Thêm sinh viên</button><br />
+      <input
+        type="search"
+        class="input"
+        placeholder="Tìm kiếm sinh viên..."
+        onkeyup="searchForStudentByName()"
+        id="search-input"
+      />
+      <table>
+        <thead>
+          <th>Tên</th>
+          <th>Tuổi</th>
+          <th>Lớp</th>
+          <th>Hành Động</th>
+        </thead>
+        <tbody id="show-student-list"></tbody>
+      </table>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
